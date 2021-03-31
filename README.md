@@ -4,9 +4,6 @@ SQuAD2.0的复现项目
 
 [Know What You Don’t Know: Unanswerable Questions for SQuAD](https://static.aminer.cn/misc/pdf/P18-2124.pdf)
 
-BiDAF模型[示例代码](https://github.com/chrischute/squad)
-
-[BiDAF论文](https://arxiv.org/pdf/1611.01603.pdf)
 
 数据集
 

@@ -23,6 +23,19 @@ def get_train_args():
                         type=int,
                         default=30,
                         help='Number of epoch for which to train.')
+    parser.add_argument('--metric_name',
+                        type=str,
+                        default='F1',
+                        choices=('NLL', 'EM', 'F1'),
+                        help='Name of dev metric to determine best checkpoint.')
+    if args.metric_name == 'NLL':
+        # Best checkpoint is the one that minimizes negative log-likelihood
+        args.maximize_metric = False
+    elif args.metric_name in ('EM', 'F1'):
+        # Best checkpoint is the one that maximizes EM or F1
+        args.maximize_metric = True
+    else:
+        raise ValueError(f'Unrecognized metric name: "{args.metric_name}"')
 
 
 def add_comme_args(parser):
@@ -37,4 +50,9 @@ def add_comme_args(parser):
                         default='--./data/test')
     
 
-# def add_
+def add_train_test_args(parser):
+    parser.argument('--save_dir',
+                    type=int,
+                    default='./save/',
+                    help='Base dir')
+    

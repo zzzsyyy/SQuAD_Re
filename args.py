@@ -19,6 +19,10 @@ def get_train_args():
                         type=float,
                         default=0,
                         help='L2 weight decay')'''
+    parser.add_argument('--ema_decay',
+                        type=float,
+                        default=0.999,
+                        help='Decay rate for exponential moving average of parameters.')
     parser.add_argument('--num_epochs',
                         type=int,
                         default=30,
@@ -55,4 +59,9 @@ def add_train_test_args(parser):
                     type=int,
                     default='./save/',
                     help='Base dir')
+    parser.add_argument('--name',
+                        '-n',
+                        type=str,
+                        required=True,
+                        help='Name to identify training or test run.')
     

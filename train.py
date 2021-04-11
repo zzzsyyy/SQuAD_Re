@@ -1,22 +1,17 @@
-'''
-训练
-'''
 
 import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
-import torch.optim.lr_scheduler as sched
-import torch.utils.data as data
 import utils
 
 from tensorboardX import SummaryWriter
-from modle import modle_1
+from modle import 
 from dataset import dataset
 
- def main(args):
-    # 设置日志， 和设备
+def main(args):
+    # 设置日志，和设备
     args.save_dir = utils.get_save_dir(args.save_dir, args.name, training=true)
     log = utils.get_logger(args.save_dir, args.name)
     tbx = SummaryWriter(args.save_dir)

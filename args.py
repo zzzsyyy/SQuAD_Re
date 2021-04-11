@@ -15,10 +15,6 @@ def get_train_args():
                         type=float,
                         default=0.5,
                         help='Learning rate')
-    '''parser.add_argument('--l2_wd',
-                        type=float,
-                        default=0,
-                        help='L2 weight decay')'''
     parser.add_argument('--ema_decay',
                         type=float,
                         default=0.999,
